@@ -1,0 +1,23 @@
+﻿@model MovieRental.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@Model.Movie.Name</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <p>No one has rented this movie before</p>
+}
+
+else
+{
+    <h5>Customers List</h5>
+    foreach (var item in Model.Customers)
+    {
+        <p>@item.Name</p>
+    }
+}
+
